@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blink App Auth Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="logged-out-view" class="view" aria-live="polite">
+        <div class="cat-wrap" role="img" aria-label="Angry cat illustration">
+          <svg
+            class="angry-cat"
+            viewBox="0 0 260 220"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="260" height="220" fill="white" />
+            <polygon points="52,80 95,20 108,90" fill="#1f1f1f" />
+            <polygon points="208,80 165,20 152,90" fill="#1f1f1f" />
+            <ellipse cx="130" cy="130" rx="86" ry="72" fill="#2a2a2a" />
+            <ellipse cx="96" cy="126" rx="26" ry="22" fill="white" />
+            <ellipse cx="164" cy="126" rx="26" ry="22" fill="white" />
+            <polygon points="78,116 116,108 114,122 76,128" fill="#111" />
+            <polygon points="182,108 144,116 146,130 184,122" fill="#111" />
+            <circle cx="96" cy="126" r="8" fill="#0f0f0f" />
+            <circle cx="164" cy="126" r="8" fill="#0f0f0f" />
+            <polygon points="130,136 120,148 140,148" fill="#f58b7c" />
+            <path d="M98 166 Q130 184 162 166" stroke="#111" stroke-width="8" fill="none" stroke-linecap="round" />
+            <line x1="46" y1="140" x2="14" y2="132" stroke="#111" stroke-width="4" />
+            <line x1="48" y1="152" x2="12" y2="152" stroke="#111" stroke-width="4" />
+            <line x1="46" y1="164" x2="14" y2="172" stroke="#111" stroke-width="4" />
+            <line x1="214" y1="140" x2="246" y2="132" stroke="#111" stroke-width="4" />
+            <line x1="212" y1="152" x2="248" y2="152" stroke="#111" stroke-width="4" />
+            <line x1="214" y1="164" x2="246" y2="172" stroke="#111" stroke-width="4" />
+          </svg>
+        </div>
+        <button id="sign-in-button" class="action-button" type="button">
+          Sign in with Google
+        </button>
+      </section>
+
+      <section id="logged-in-view" class="view hidden" aria-live="polite">
+        <div class="mark" aria-label="blinking exclamation mark">!</div>
+        <button id="sign-out-button" class="action-button" type="button">
+          Sign out
+        </button>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
