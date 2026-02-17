@@ -3,43 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blinking Exclamation</title>
-    <style>
-      :root {
-        color-scheme: light;
-      }
-
-      body {
-        margin: 0;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        background: #fff;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-
-      .mark {
-        font-size: clamp(8rem, 25vw, 20rem);
-        font-weight: 900;
-        line-height: 1;
-        color: #000;
-        animation: blink 0.9s steps(1, end) infinite;
-      }
-
-      @keyframes blink {
-        0%,
-        49% {
-          opacity: 1;
-        }
-
-        50%,
-        100% {
-          opacity: 0;
-        }
-      }
-    </style>
+    <title>Blink Auth App</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="mark" aria-label="blinking exclamation mark">!</div>
+    <main class="app" aria-live="polite">
+      <section id="signed-out-view" class="view hidden">
+        <svg
+          class="cat"
+          viewBox="0 0 220 180"
+          role="img"
+          aria-label="Angry cat"
+        >
+          <rect x="35" y="45" width="150" height="110" rx="24" class="cat-face" />
+          <polygon points="55,55 40,20 85,45" class="cat-ear" />
+          <polygon points="165,55 180,20 135,45" class="cat-ear" />
+          <circle cx="82" cy="95" r="10" class="cat-eye" />
+          <circle cx="138" cy="95" r="10" class="cat-eye" />
+          <line x1="70" y1="82" x2="95" y2="88" class="cat-brow" />
+          <line x1="150" y1="82" x2="125" y2="88" class="cat-brow" />
+          <polygon points="110,106 100,118 120,118" class="cat-nose" />
+          <path d="M85 132 Q110 120 135 132" class="cat-mouth" />
+          <line x1="35" y1="118" x2="82" y2="120" class="whisker" />
+          <line x1="35" y1="133" x2="82" y2="131" class="whisker" />
+          <line x1="185" y1="118" x2="138" y2="120" class="whisker" />
+          <line x1="185" y1="133" x2="138" y2="131" class="whisker" />
+        </svg>
+        <button id="sign-in" type="button">Sign in with Google</button>
+      </section>
+
+      <section id="signed-in-view" class="view hidden">
+        <div class="mark" aria-label="blinking exclamation mark">!</div>
+        <button id="sign-out" type="button">Sign out</button>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
   </body>
 </html>
